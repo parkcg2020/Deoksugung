@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>환영합니다.굿!</title>
+    <title>환영합니다!</title>
     <style>
         body { 
             background-color: #e0f7fa; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: 100vh; 
+            min-height: 100vh; /* 높이 설정 수정 */
             margin: 0;
             font-family: sans-serif;
+            padding: 20px; /* 모바일에서 여백 확보 */
         }
         div {
             background: white;
@@ -19,15 +20,27 @@
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
+            max-width: 600px; /* 박스 너무 커지지 않게 제한 */
+            width: 100%;
         }
         h1 { color: #006064; }
+        /* 이미지 스타일 */
+        img {
+            max-width: 100%; /* 이미지가 박스보다 커지면 줄어들게 */
+            height: auto;    /* 비율 유지 */
+            margin-top: 20px; /* 위쪽 여백 */
+            border-radius: 10px; /* 이미지 모서리 둥글게 */
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1>🎉 축하합니다. 굿굿!</h1>
-        <p>깃허브로 만든 당신의 첫 웹사이트입니다.</p>
-        <p>이제 이 주소를 친구들에게 보내보세요.</p>
+        <h1>📸 사진 갤러리 시작!</h1>
+        <p>요청하신 첫 번째 사진을 아래에 추가했습니다.</p>
+        
+        <img src="https://i.namu.wiki/i/j8kS3GOQ0XpXHzrTGIGcGGHvbuV4wQMhgH85SDR3hBIJObsnP3hiUC3WCUl2ZxxYCpy20t_DJWwuV9DXDWNYRI2Kh5x1g8sVDYheOKa62cGjqkkk2k7WZzKu8JGSg1_8mJoiko4vBZx9U0_l64Ofgw.webp" alt="요청하신 첫번째 사진">
+        
+        <p>멋진 사진이네요!</p>
     </div>
 </body>
 </html>
