@@ -78,4 +78,63 @@
             right: 30px;
             color: #f1f1f1;
             font-size: 40px;
-            font-weight: bold
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 1001;
+        }
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <h1>📸 환구단 사진</h1>
+        <p>사진을 클릭하면 크게 볼 수 있습니다.</p>
+        
+        <img id="myImage" 
+             class="gallery-image"
+             src="https://i.namu.wiki/i/RaD8nu2EPweoQZ8HtVaDTRMUwxfEEoHDyFoW_lfj1IO8rG8kzIyrV_y5GaUi7FGIFzGISHw0gfiwjQS1z_ctSg.webp" 
+             alt="서울 환구단">
+        
+        <p style="margin-top: 15px; color: #555;">아름다운 우리 문화유산, 환구단입니다.</p>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+
+    <script>
+        // HTML 요소들을 변수로 가져옵니다.
+        const modal = document.getElementById("imageModal");
+        const img = document.getElementById("myImage");
+        const modalImg = document.getElementById("fullImage");
+
+        // 작은 이미지를 클릭했을 때 실행되는 함수
+        img.onclick = function(){
+            modal.style.display = "flex"; // 모달 창을 보이게 함 (flex로 중앙 정렬)
+            modalImg.src = this.src;      // 클릭한 이미지의 주소를 모달 이미지에 넣음
+            modalImg.alt = this.alt;      // 설명글도 복사
+        }
+
+        // 모달 닫기 함수
+        function closeModal() {
+            modal.style.display = "none"; // 모달 창을 다시 숨김
+        }
+
+        // 모달 바깥 배경(검은 부분)을 클릭해도 닫히게 하기
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
